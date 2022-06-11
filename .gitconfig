@@ -1,0 +1,93 @@
+[alias]
+	aliases = !git config -l | grep alias | cut -c 7-
+	conflicts = diff --name-only --diff-filter=U
+	graph = log --oneline --graph --decorate
+	lds = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
+	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+	local-branches = !git branch -vv | cut -c 3- | awk '$3 !~/\\[/ { print $1 }'
+	ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+	recent-branches = !git branch --sort=-committerdate | head
+	server = daemon --reuseaddr --verbose --base-path=. --export-all ./.git
+	subup = submodule update --init --recursive
+	subpull = !git submodule foreach 'git fetch && git pull --tags -f origin master'
+	whois = !sh -c 'git log -i -1 --author=\"$1\" --pretty=\"format:%an <%ae>\"' -
+
+[blame]
+	coloring = highlightRecent
+	markIgnoredLines = true
+	markUnblamableLines = true
+
+[branch]
+	autoSetupMerge = inherit
+
+[checkout]
+	guess = true
+	workers = 0
+
+[clean]
+	requireForce = false
+
+[clone]
+	rejectShallow = false
+
+[color]
+	ui = auto
+
+[core]
+	editor = /Applications/Sublime\\ Text.app/Contents/SharedSupport/bin/subl --new-window --wait
+	eol = lf
+	filemode = false
+	ignoreCase = true
+	pager = less
+	precomposeUnicode = true
+	whitespace = blank-at-eol, \
+				-blank-at-eof, \
+				indent-with-non-tab, \
+				space-before-tab, \
+				-tab-in-indent, \
+				tabwidth=4
+
+[credential]
+	helper = cache
+
+[fetch]
+	parallel = 0
+	prune = true
+	recurseSubmodules = true
+
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+
+[github]
+	user = benthevining
+	token = token
+
+[init]
+	defaultBranch = main
+
+[maintenance]
+	auto = true
+	strategy = incremental
+
+[pull]
+	rebase = false
+
+[push]
+	default = simple
+	recurseSubmodules = check
+
+[user]
+	email = ben.the.vining@gmail.com
+	name = Ben Vining
+	useConfigOnly = true
+
+[submodule]
+	fetchJobs = 0
+	propagateBranches = true
+	recurse = true
+
+[web]
+	browser = google-chrome
