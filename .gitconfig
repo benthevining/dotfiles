@@ -2,10 +2,9 @@
 	aliases = !git config -l | grep alias | cut -c 7-
 	conflicts = diff --name-only --diff-filter=U
 	graph = log --oneline --graph --decorate
-	lds = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
 	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
 	local-branches = !git branch -vv | cut -c 3- | awk '$3 !~/\\[/ { print $1 }'
-	ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+	ls = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
 	recent-branches = !git branch --sort=-committerdate | head
 	server = daemon --reuseaddr --verbose --base-path=. --export-all ./.git
 	subup = submodule update --init --recursive

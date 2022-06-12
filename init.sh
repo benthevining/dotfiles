@@ -1,5 +1,4 @@
-local dotfiles_dir="$(cd "$(dirname "$0")" && pwd)"
-readonly dotfiles_dir
+#!/bin/sh
 
 # based on the shell, detect the appropriate shell file & copy it to home dir
 
