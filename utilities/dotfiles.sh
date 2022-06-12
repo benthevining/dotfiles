@@ -62,28 +62,17 @@ dotfiles_clean() {
 
 dotfiles() {
 	case "$1" in
-		clean)
-			dotfiles_clean
-			;;
-		go)
-			cd "$dotfiles_impl_dotfiles_dir" || exit 1
-			;;
-		help)
-			dotfiles_print_help
-			;;
-		open)
-			cd "$dotfiles_impl_dotfiles_dir" && make open
-			;;
-		pull)
-			dotfiles_pull
-			;;
-		update)
-			dotfiles_update
-			;;
+		clean) dotfiles_clean ;;
+		go) cd "$dotfiles_impl_dotfiles_dir" || exit 1 ;;
+		help) dotfiles_print_help ;;
+		open) cd "$dotfiles_impl_dotfiles_dir" && make open ;;
+		pull) dotfiles_pull ;;
+		update) dotfiles_update ;;
 		reload)
 			# re-source dotfiles
 			. "$dotfiles_impl_dotfiles_dir/main.sh"
 			;;
+		"") dotfiles_print_help ;;
 		*)
 			echo "Unknown subcommand $1 requested"
 			exit 1
