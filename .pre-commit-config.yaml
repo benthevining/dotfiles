@@ -61,12 +61,12 @@ repos:
 
   # YAML
     - repo: https://github.com/jumanjihouse/pre-commit-hook-yamlfmt
-      rev: 0.2.1
+      rev: 0.2.2
       hooks:
           - id: yamlfmt
             args: [--width, '200', --preserve-quotes]
     - repo: https://github.com/adrienverge/yamllint
-      rev: v1.26.3
+      rev: v1.27.1
       hooks:
           - id: yamllint
             #exclude: .clang-tidy
