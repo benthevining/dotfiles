@@ -18,6 +18,3 @@ gem update --system
 gem update --force "$(gem outdated | cut -d ' ' -f 1)";
 
 # NPM
-
-# update dotfiles themselves...
-dotfiles pull

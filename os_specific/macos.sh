@@ -9,8 +9,6 @@ defaults write com.apple.screencapture location -string "$HOME/Desktop"
 # save screenshots in png format
 defaults write com.apple.screencapture type -string "png"
 
-#source macosdefaults.sh
-
 # copy pwd to cliptray
 alias cpwd="pwd|tr -d '\n'|pbcopy"
 

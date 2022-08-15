@@ -75,6 +75,6 @@ dotfiles() {
 		"") dotfiles_print_help ;;
 		*)
 			echo "Unknown subcommand $1 requested"
-			exit 1
+			return
 	esac
 }

@@ -1,16 +1,13 @@
 [alias]
 	aliases = !git config -l | grep alias | cut -c 7-
 	conflicts = diff --name-only --diff-filter=U
-	fp = !git fetch && git pull
 	graph = log --oneline --graph --decorate
 	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
 	local-branches = !git branch -vv | cut -c 3- | awk '$3 !~/\\[/ { print $1 }'
 	ls = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
-	recent-branches = !git branch --sort=-committerdate | head
-	server = daemon --reuseaddr --verbose --base-path=. --export-all ./.git
+	save = !git add . && git stash push --keep-index
 	subup = submodule update --init --recursive
 	subpull = !git submodule foreach 'git fetch && git pull --tags -f origin main'
-	whois = !sh -c 'git log -i -1 --author=\"$1\" --pretty=\"format:%an <%ae>\"' -
 
 [blame]
 	coloring = highlightRecent
