@@ -86,7 +86,7 @@ repos:
 
   # check editorconfig rules
     - repo: https://github.com/editorconfig-checker/editorconfig-checker.python
-      rev: 2.6.2
+      rev: 2.7.1
       hooks:
           - id: editorconfig-checker
 
