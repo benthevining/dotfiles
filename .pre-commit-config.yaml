@@ -46,7 +46,7 @@ repos:
           - id: fix-smartquotes
           - id: forbid-bidi-controls
     - repo: https://github.com/crate-ci/typos
-      rev: v1.14.3 # last known stable version is typos-dict-v0.8.2
+      rev: v1.14.4 # last known stable version is typos-dict-v0.8.2
       hooks:
           - id: typos
             args: [--write-changes]
