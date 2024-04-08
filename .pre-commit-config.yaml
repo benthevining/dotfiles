@@ -26,7 +26,7 @@ repos:
     #       - id: nitpick
 
     - repo: https://github.com/pre-commit/pre-commit-hooks
-      rev: v4.5.0
+      rev: v4.6.0
       hooks:
           - id: check-yaml
           - id: check-case-conflict
@@ -46,7 +46,7 @@ repos:
           - id: fix-smartquotes
           - id: forbid-bidi-controls
     - repo: https://github.com/crate-ci/typos
-      rev: typos-dict-v0.11.10 # last known stable version is typos-dict-v0.8.2
+      rev: v1.20.4 # last known stable version is typos-dict-v0.8.2
       hooks:
           - id: typos
             args: [--write-changes]
