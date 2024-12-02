@@ -40,13 +40,13 @@ repos:
 
   # text and typos
     - repo: https://github.com/sirosen/texthooks
-      rev: 0.6.7
+      rev: 0.6.8
       hooks:
           - id: fix-ligatures
           - id: fix-smartquotes
           - id: forbid-bidi-controls
     - repo: https://github.com/crate-ci/typos
-      rev: v1.28.0 # last known stable version is typos-dict-v0.8.2
+      rev: typos-dict-v0.11.37 # last known stable version is typos-dict-v0.8.2
       hooks:
           - id: typos
             args: [--write-changes]
